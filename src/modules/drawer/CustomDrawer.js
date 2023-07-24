@@ -35,7 +35,7 @@ const CustomDrawer = ({ navigation }) => {
   return (
     <View style={{ flex: 1.5 }}>
       <View>
-        {/* <View style={{ flex: 0.45, backgroundColor: '#008080', paddingTop: 11, paddingHorizontal: 11, marginBottom: 11 }}>
+        <View style={{ flex: 0.45, backgroundColor: '#008080', paddingTop: 11, paddingHorizontal: 11, marginBottom: 11 }}>
         <Image source={{ uri: 'https://freepngimg.com/download/happy/144616-emoji-happy-free-transparent-image-hq.png', }}
           style={{ height: 101, width: 101, borderRadius: 4, }} />
         <Text style={{ fontWeight: 'bold', fontSize: 25, marginTop: 5, }}> Admin</Text>
@@ -86,7 +86,8 @@ const CustomDrawer = ({ navigation }) => {
           ))}
         </View>
       )}
-      <Separator /> */}</View>
+      <Separator />
+      </View>
       <TouchableOpacity onPress={() => navigation.navigate("VotingPage")}>
         <Text style={{ fontSize: 25, fontWeight: 'bold', margin: 11 }}>Voting</Text>
       </TouchableOpacity>

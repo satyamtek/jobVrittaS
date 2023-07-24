@@ -32,7 +32,7 @@ export default  function LoginScreen  ({ navigation })  {
             login_Password: loginPassword,
           }),
         });
-
+console.log(loginPassword)
         if (response.status === 200) {
           const data = await response.json();
           console.log(data.token);
@@ -69,17 +69,19 @@ export default  function LoginScreen  ({ navigation })  {
   if (showSplash) {
     return (
       <View style={LoginStyles.splash}>
-        <Image source={require('D:/Project/jobVritta/src/assets/logo.jpg')} />
-        <Image source={require('D:/Project/jobVritta/src/assets/jobVrittalogo.jpg')} />
+        {/* <Image source={require('D:/Project/jobVritta/src/assets/logo.jpg')} /> */}
+        <Image source={require('../../assets/logo.jpg')} />
+
+        <Image source={require('../../assets/jobVrittalogo.jpg')} />
       </View>
     );
   }
 
   return (
     <View>
-      <ImageBackground source={require("D:/Project/jobVritta/src/assets/2.jpg")}>
+      <ImageBackground source={require("../../assets/2.jpg")}>
         <SafeAreaView style={{ height: '100%' }}>
-          <Image source={require('D:/Project/jobVritta/src/assets/ss.png')} style={{ width: '100%', height: '27%' }} />
+          <Image source={require('../../assets/ss.png')} style={{ width: '100%', height: '27%' }} />
           <ScrollView>
             <View style={LoginStyles.container}>
               <Text style={LoginStyles.title}>JobVritta</Text>

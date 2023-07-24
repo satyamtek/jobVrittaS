@@ -37,7 +37,7 @@ export default function Form({ setLoginName, setLoginPassword, onSubmit }) {
         style={LoginStyles.input}
         onChangeText={handleLoginPasswordChange}
         placeholder="Password"
-        secureTextEntry={true}
+        // secureTextEntry={true}
         // autoCapitalize="none"
         returnKeyType="go"
         blurOnSubmit={false}
