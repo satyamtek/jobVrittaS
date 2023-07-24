@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { View} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
 import { API_ENDPOINTS } from '../../constants';
 import CompanyPObody from './components/CompanyPObody';
 
-
-const CompanyPO = () => {
+export default function CompanyPO (){
     // const { name } = route.params;
     const [data1, setData1] = useState(null);
     const [data2, setData2] = useState(null);
@@ -42,9 +40,7 @@ const CompanyPO = () => {
             });
             const result = await response.json();
             setData1(result);
-        } catch (error) {
-            console.error(error);
-        }
+        } catch (error) {console.error(error)}
     };
 
     const getDayWiseData = async () => {
@@ -57,10 +53,7 @@ const CompanyPO = () => {
             });
             const result = await response.json();
             setData2(result);
-            // console.log("console data 2 {'\n'}", data2)
-        } catch (error) {
-            console.error(error);
-        }
+        } catch (error) {console.error(error)}
     };
 
  return(
@@ -69,7 +62,3 @@ const CompanyPO = () => {
     </View>
  )
 }
-
-export default CompanyPO;
-
-

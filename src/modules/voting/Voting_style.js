@@ -3,7 +3,7 @@ import { FontFamily, FontSize } from '../../theme';
 
 export const VotingStyle = StyleSheet.create({
     container:{
-        // flex:1,
+        height: '100%',// flex:1,
         backgroundColor:"#ff9999"
     },
     title:{

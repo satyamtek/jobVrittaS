@@ -1,27 +1,25 @@
 import { View, Text, FlatList, ImageBackground, } from 'react-native';
-import { styles } from '../../drawer';
+import { BranchStyle } from '../../BranchStyle';
 
 export default function PObody({ data1, data2 }) {
 
     const renderItem = ({ item }) => (
-        <View style={styles.row}>
-            <Text style={styles.cell}>{item.branchName + "-" + (item.companyName.split(" ")[0])}</Text>
-            {/* <Text style={styles.cell}>{item.companyName}</Text> */}
-            <Text style={styles.cell}>{item.totalPO}</Text>
-            <Text style={styles.cell}>{item.totalRunningPO}</Text>
-            <Text style={styles.cell}>{item.totalEndedPO}</Text>
-            <Text style={styles.cell}>{item.totalFizzledPO}</Text>
+        <View style={BranchStyle.row}>
+            <Text style={BranchStyle.cell}>{item.branchName + "-" + (item.companyName.split(" ")[0])}</Text>
+            <Text style={BranchStyle.cell}>{item.totalPO}</Text>
+            <Text style={BranchStyle.cell}>{item.totalRunningPO}</Text>
+            <Text style={BranchStyle.cell}>{item.totalEndedPO}</Text>
+            <Text style={BranchStyle.cell}>{item.totalFizzledPO}</Text>
         </View>
     );
 
     const renderHeader = () => (
-        <View style={styles.row}>
-            <Text style={styles.headerText}>Branch Name</Text>
-            {/* <Text style={styles.headerText}>Company Name</Text> */}
-            <Text style={styles.headerText}>T.PO#</Text>
-            <Text style={styles.headerText}>R.PO#</Text>
-            <Text style={styles.headerText}>E.PO</Text>
-            <Text style={styles.headerText}>F.PO</Text>
+        <View style={BranchStyle.row}>
+            <Text style={BranchStyle.headerText}>Branch Name</Text>
+            <Text style={BranchStyle.headerText}>T.PO#</Text>
+            <Text style={BranchStyle.headerText}>R.PO#</Text>
+            <Text style={BranchStyle.headerText}>E.PO</Text>
+            <Text style={BranchStyle.headerText}>F.PO</Text>
         </View>
     );
 
@@ -29,26 +27,26 @@ export default function PObody({ data1, data2 }) {
         <View>
             {data2 && (
                 <View style={{}} >
-                    <View style={styles.row}>
+                    <View style={BranchStyle.row}>
                         <Text style={{ color: '#fff' }}>Day Total-</Text>
-                        <Text style={styles.cell1}>{data2.dayTotalPO}</Text>
-                        <Text style={styles.cell1}>{data2.dayTotalRunningPO}</Text>
-                        <Text style={styles.cell1}>{data2.dayTotalEndedPO}</Text>
-                        <Text style={styles.cell1}>{data2.dayTotalFizzledPO}</Text>
+                        <Text style={BranchStyle.cell1}>{data2.dayTotalPO}</Text>
+                        <Text style={BranchStyle.cell1}>{data2.dayTotalRunningPO}</Text>
+                        <Text style={BranchStyle.cell1}>{data2.dayTotalEndedPO}</Text>
+                        <Text style={BranchStyle.cell1}>{data2.dayTotalFizzledPO}</Text>
                     </View>
-                    <View style={styles.row}>
+                    <View style={BranchStyle.row}>
                         <Text style={{ color: '#fff' }}>Week Total</Text>
-                        <Text style={styles.cell1}>{data2.weekTotalPO}</Text>
-                        <Text style={styles.cell1}>{data2.weekTotalRunningPO}</Text>
-                        <Text style={styles.cell1}>{data2.weekTotalEndedPO}</Text>
-                        <Text style={styles.cell1}>{data2.weekTotalFizzledPO}</Text>
+                        <Text style={BranchStyle.cell1}>{data2.weekTotalPO}</Text>
+                        <Text style={BranchStyle.cell1}>{data2.weekTotalRunningPO}</Text>
+                        <Text style={BranchStyle.cell1}>{data2.weekTotalEndedPO}</Text>
+                        <Text style={BranchStyle.cell1}>{data2.weekTotalFizzledPO}</Text>
                     </View>
-                    <View style={styles.row}>
+                    <View style={BranchStyle.row}>
                         <Text style={{ color: '#fff' }}>Month Total-</Text>
-                        <Text style={styles.cell1}>{data2.monthTotalPO}</Text>
-                        <Text style={styles.cell1}>{data2.monthTotalRunningPO}</Text>
-                        <Text style={styles.cell1}>{data2.monthTotalEndedPO}</Text>
-                        <Text style={styles.cell1}>{data2.monthTotalFizzledPO}</Text>
+                        <Text style={BranchStyle.cell1}>{data2.monthTotalPO}</Text>
+                        <Text style={BranchStyle.cell1}>{data2.monthTotalRunningPO}</Text>
+                        <Text style={BranchStyle.cell1}>{data2.monthTotalEndedPO}</Text>
+                        <Text style={BranchStyle.cell1}>{data2.monthTotalFizzledPO}</Text>
                     </View>
                 </View>
             )}
@@ -60,8 +58,8 @@ export default function PObody({ data1, data2 }) {
             <ImageBackground
                 source={{ uri: 'https://cdn.wallpapersafari.com/24/74/wl1eVE.jpg' }}
                 style={{ height: '100%' }}>
-                <View style={styles.container}>
-                    <View style={styles.header}>
+                <View style={BranchStyle.container}>
+                    <View style={BranchStyle.header}>
                         <FlatList
                             data={data1}
                             // keyExtractor={item => item.branchName}

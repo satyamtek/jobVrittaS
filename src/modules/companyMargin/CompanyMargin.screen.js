@@ -4,7 +4,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { API_ENDPOINTS } from '../../constants';
 import CompanyMarginBody from './components/CompanyMarginBody';
 
-
 const CompanyMargin = () => {
     // const { name } = route.params;
     const [data1, setData1] = useState(null);
@@ -24,12 +23,7 @@ const CompanyMargin = () => {
         return () => clearInterval(interval);
     }, []);
 
-    useEffect(() => {
-        if (token) {
-            getDashboardData();
-            getDayWiseData();
-        }
-    }, [token])
+    useEffect(() => {if (token) {getDashboardData(); getDayWiseData();}}, [token])
 
     const getDashboardData = async () => {
         try {
@@ -41,9 +35,7 @@ const CompanyMargin = () => {
             });
             const result = await response.json();
             setData1(result);
-        } catch (error) {
-            console.error(error);
-        }
+        } catch (error) {console.error(error)}
     };
 
     const getDayWiseData = async () => {
@@ -56,9 +48,7 @@ const CompanyMargin = () => {
             });
             const result = await response.json();
             setData2(result);
-        } catch (error) {
-            console.error(error);
-        }
+        } catch (error) {console.error(error)}
     };
 
     return (
@@ -67,6 +57,4 @@ const CompanyMargin = () => {
         </View>
     )
 }
-
 export default CompanyMargin;
-
