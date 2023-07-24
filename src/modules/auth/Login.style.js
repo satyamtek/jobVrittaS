@@ -7,6 +7,9 @@ export const LoginStyles = StyleSheet.create({
         color: "#fff",
         margin: 11,
     },
+    login: {
+        padding: 10,
+    },
     input: {
         height: '21%',
         width: 270,

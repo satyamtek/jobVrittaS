@@ -1,19 +1,14 @@
 
 import { View, Text, FlatList, ImageBackground, } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { BranchStyle } from '../../Table.style';
+import { BranchStyle } from '../../BranchStyle';
 import { ActivityIndicator } from 'react-native-paper';
 import { useState, useEffect } from 'react';
 
 
 export default function BranchBody({ data1, data2 }) {
   const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    // Simulate an API call or data loading process
-    setTimeout(() => {
-      setLoading(false); // Set loading to false after a delay
-    }, 2000);
-  }, []);
+  useEffect(() => {  setTimeout(() => { setLoading(false);}, 2000);}, []);
   const renderHeader = () => (
     <View style={BranchStyle.row}>
       <Text style={BranchStyle.headerText}>Branch Name</Text>
@@ -67,10 +62,6 @@ export default function BranchBody({ data1, data2 }) {
   return (
     <SafeAreaView>
       <ImageBackground source={{ uri: 'https://wallpaperaccess.com/full/2044489.jpg' }} style={{ height: '100%' }}>
-        {/* <View style={BranchStyle.txtview}>
-          <Image source={{uri:'https://freepngimg.com/download/happy/144616-emoji-happy-free-transparent-image-hq.png'}}style={styles.img}/>
-          <Text style={BranchStyle.txt}> Welcome to JobVritta</Text>
-        </View> */}
         <View style={BranchStyle.container}>
           <View style={BranchStyle.header}>
             {loading ? (

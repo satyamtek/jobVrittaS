@@ -17,18 +17,13 @@ export default function MarginScreen() {
         };
         getToken();
         const interval = setInterval(() => {
-            getDashboardData(); // Fetch data every 9 min
+            getDashboardData();
             getDayWiseData();
         }, 90000);
         return () => clearInterval(interval);
     }, []);
 
-    useEffect(() => {
-        if (token) {
-            getDashboardData();
-            getDayWiseData();
-        }
-    }, [token])
+    useEffect(() => {if (token) { getDashboardData(); getDayWiseData()}}, [token])
 
     const getDashboardData = async () => {
         try {
@@ -40,9 +35,7 @@ export default function MarginScreen() {
             });
             const result = await response.json();
             setData1(result);
-        } catch (error) {
-            console.error(error);
-        }
+        } catch (error) {console.error(error)}
     };
 
     const getDayWiseData = async () => {
@@ -55,9 +48,7 @@ export default function MarginScreen() {
             });
             const result = await response.json();
             setData2(result);
-        } catch (error) {
-            console.error(error);
-        }
+        } catch (error) {console.error(error)}
     };
 
     return(
@@ -65,5 +56,4 @@ export default function MarginScreen() {
             <MarginBody data1={data1} data2={data2}/>
         </View>
     )
-
 }

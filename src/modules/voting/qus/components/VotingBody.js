@@ -68,8 +68,8 @@ export default function VotingBody({ questions, onSave, navigation }) {
         <Button title="+ PUT YOUR QUOTE " onPress={handleAskButton} color="#e60099" />
       </View>
       <Dialog.Container visible={dialogVisible}>
-        <Dialog.Title>Ask a Question</Dialog.Title>
-        <Dialog.Input placeholder="Enter your question" multiline onChangeText={(text) => setNewQuestion(text)} />
+        <Dialog.Title style={{fontSize:21,}}>Ask a Question</Dialog.Title>
+        <Dialog.Input style={{height:'60%', borderColor:'red',borderRadius:11, flexDirection:'row'}} placeholder="Enter your question" multiline onChangeText={(text) => setNewQuestion(text)} />
         <TouchableOpacity onPress={showDatepicker}>
           <Text>Select Expiry Date {selectedDate.toDateString()}</Text>
         </TouchableOpacity>
@@ -78,8 +78,7 @@ export default function VotingBody({ questions, onSave, navigation }) {
         )}
         <Dialog.Button label="Save" onPress={()=> {
           onSave(newQuestion, selectedDate)
-        setDialogVisible(false)
-        } } />
+        setDialogVisible(false)} } />
         <Dialog.Button label="Cancel" onPress={handleCancelButton} />
       </Dialog.Container>
       <FlatList data={questions} renderItem={renderItem} keyExtractor={(item) => item.voting_Que_ID.toString()} />

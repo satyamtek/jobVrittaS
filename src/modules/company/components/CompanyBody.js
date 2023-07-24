@@ -1,7 +1,7 @@
 
 import { View, Text, FlatList, ImageBackground, } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { BranchStyle } from '../../Table.style';
+import { BranchStyle } from '../../BranchStyle';
 import { styles } from '../../drawer';
 
 export default function CompanyBody({ data1, data2 }) {

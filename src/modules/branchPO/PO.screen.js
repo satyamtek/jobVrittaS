@@ -9,7 +9,7 @@ export default function POscreen() {
     const [data1, setData1] = useState(null);
     const [data2, setData2] = useState(null);
     const [token, setToken] = useState(null);
-console.log("PO screen data print done")
+
     useEffect(() => {
         const getToken = async () => {
             const token = await AsyncStorage.getItem('token');
@@ -17,7 +17,7 @@ console.log("PO screen data print done")
         };
         getToken();
         const interval = setInterval(() => {
-            getDashboardData(); // Fetch data every 10 seconds
+            getDashboardData();
             getDayWiseData();
         }, 900000);
         return () => clearInterval(interval);
@@ -40,9 +40,7 @@ console.log("PO screen data print done")
             });
             const result = await response.json();
             setData1(result);
-        } catch (error) {
-            console.error(error);
-        }
+        } catch (error) {console.error(error)}
     };
 
     const getDayWiseData = async () => {
@@ -55,9 +53,7 @@ console.log("PO screen data print done")
             });
             const result = await response.json();
             setData2(result);
-        } catch (error) {
-            console.error(error);
-        }
+        } catch (error) {console.error(error)}
     };
 
     return (
@@ -65,5 +61,4 @@ console.log("PO screen data print done")
             <PObody data1={data1} data2={data2} />
         </View>
     )
-
 }

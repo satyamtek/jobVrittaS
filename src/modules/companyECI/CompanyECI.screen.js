@@ -41,9 +41,7 @@ export default function CompanyECIscreen () {
             });
             const result = await response.json();
             setData1(result);
-        } catch (error) {
-            console.error(error);
-        }
+        } catch (error) {console.error(error)}
     };
 
     const getDayWiseData = async () => {
@@ -56,9 +54,7 @@ export default function CompanyECIscreen () {
             });
             const result = await response.json();
             setData2(result);
-        } catch (error) {
-            console.error(error);
-        }
+        } catch (error) {console.error(error)}
     };
 
   return(

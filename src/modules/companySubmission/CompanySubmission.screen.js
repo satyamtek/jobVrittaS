@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import CompanySubmissionBody from './components/CompanySubmissionBody';
 
 
-const CompanySubmission = () => {
+export default function CompanySubmission  (){
     // const { name } = route.params;
     const [data1, setData1] = useState(null);
     const [data2, setData2] = useState(null);
@@ -24,12 +24,7 @@ const CompanySubmission = () => {
         return () => clearInterval(interval);
     }, []);
 
-    useEffect(() => {
-        if (token) {
-            getDashboardData();
-            getDayWiseData();
-        }
-    }, [token])
+    useEffect(() => {if (token) {getDashboardData();getDayWiseData()}}, [token])
 
     const getDashboardData = async () => {
         try {
@@ -41,9 +36,7 @@ const CompanySubmission = () => {
             });
             const result = await response.json();
             setData1(result);
-        } catch (error) {
-            console.error(error);
-        }
+        } catch (error) {console.error(error)}
     };
 
     const getDayWiseData = async () => {
@@ -56,9 +49,7 @@ const CompanySubmission = () => {
             });
             const result = await response.json();
             setData2(result);
-        } catch (error) {
-            console.error(error);
-        }
+        } catch (error) {console.error(error)}
     };
 
 return(
@@ -67,4 +58,3 @@ return(
     </View>
 )
 }
-export default CompanySubmission;
